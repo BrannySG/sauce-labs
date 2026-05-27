@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1a3a"/>
+      <stop offset="0.55" stop-color="#1a3470"/>
+      <stop offset="1" stop-color="#3b1f6a"/>
+    </linearGradient>
+
+    <radialGradient id="spot" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#ffd86b" stop-opacity="0.35"/>
+      <stop offset="0.55" stop-color="#ff5fb0" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#3b1f6a" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="orb1" cx="0.35" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#fff5c2"/>
+      <stop offset="0.5" stop-color="#ffb84d"/>
+      <stop offset="1" stop-color="#c8581c"/>
+    </radialGradient>
+
+    <radialGradient id="orb2" cx="0.35" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#d8fff4"/>
+      <stop offset="0.5" stop-color="#5ee9ff"/>
+      <stop offset="1" stop-color="#1f6f9b"/>
+    </radialGradient>
+
+    <radialGradient id="orb3" cx="0.35" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#ffe6f6"/>
+      <stop offset="0.5" stop-color="#ff7ac6"/>
+      <stop offset="1" stop-color="#9c2670"/>
+    </radialGradient>
+
+    <radialGradient id="orb4" cx="0.35" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#e4ffd6"/>
+      <stop offset="0.5" stop-color="#7bd96a"/>
+      <stop offset="1" stop-color="#1f6a2a"/>
+    </radialGradient>
+
+    <radialGradient id="orb5" cx="0.35" cy="0.35" r="0.65">
+      <stop offset="0" stop-color="#fff0e0"/>
+      <stop offset="0.5" stop-color="#c79b6a"/>
+      <stop offset="1" stop-color="#4a2a14"/>
+    </radialGradient>
+
+    <radialGradient id="orbBig" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#fff7a1"/>
+      <stop offset="0.45" stop-color="#ff8e3c"/>
+      <stop offset="1" stop-color="#7a1d6a"/>
+    </radialGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#spot)"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" fill="none">
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="600" x2="1200" y2="600"/>
+  </g>
+
+  <ellipse cx="600" cy="560" rx="380" ry="40" fill="#000" opacity="0.35" filter="url(#softGlow)"/>
+
+  <g transform="translate(150 520)">
+    <circle r="38" fill="url(#orb5)"/>
+    <circle r="6" cx="-12" cy="-8" fill="#fff" opacity="0.9"/>
+    <circle r="6" cx="12" cy="-8" fill="#fff" opacity="0.9"/>
+    <circle r="2.5" cx="-12" cy="-7" fill="#0b1a3a"/>
+    <circle r="2.5" cx="12" cy="-7" fill="#0b1a3a"/>
+    <path d="M -10 8 Q 0 16 10 8" stroke="#0b1a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(280 470)">
+    <circle r="55" fill="url(#orb4)"/>
+    <circle r="9" cx="-18" cy="-10" fill="#fff"/>
+    <circle r="9" cx="18" cy="-10" fill="#fff"/>
+    <circle r="4" cx="-18" cy="-8" fill="#0b1a3a"/>
+    <circle r="4" cx="18" cy="-8" fill="#0b1a3a"/>
+    <path d="M -16 14 Q 0 26 16 14" stroke="#0b1a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-22" cy="14" rx="6" ry="3" fill="#ff7ac6" opacity="0.6"/>
+    <ellipse cx="22" cy="14" rx="6" ry="3" fill="#ff7ac6" opacity="0.6"/>
+  </g>
+
+  <g transform="translate(460 410)">
+    <circle r="78" fill="url(#orb2)"/>
+    <circle r="14" cx="-26" cy="-14" fill="#fff"/>
+    <circle r="14" cx="26" cy="-14" fill="#fff"/>
+    <circle r="6" cx="-26" cy="-11" fill="#0b1a3a"/>
+    <circle r="6" cx="26" cy="-11" fill="#0b1a3a"/>
+    <circle r="2" cx="-22" cy="-14" fill="#fff"/>
+    <circle r="2" cx="30" cy="-14" fill="#fff"/>
+    <path d="M -22 22 Q 0 40 22 22" stroke="#0b1a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M -10 26 L -6 34 M 10 26 L 6 34" stroke="#0b1a3a" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(720 360)">
+    <circle r="100" fill="url(#orb3)"/>
+    <circle r="18" cx="-32" cy="-18" fill="#fff"/>
+    <circle r="18" cx="32" cy="-18" fill="#fff"/>
+    <circle r="9" cx="-30" cy="-14" fill="#0b1a3a"/>
+    <circle r="9" cx="34" cy="-14" fill="#0b1a3a"/>
+    <circle r="3" cx="-26" cy="-18" fill="#fff"/>
+    <circle r="3" cx="38" cy="-18" fill="#fff"/>
+    <path d="M -28 28 Q 0 56 28 28" stroke="#0b1a3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-44" cy="20" rx="10" ry="5" fill="#fff" opacity="0.45"/>
+    <ellipse cx="44" cy="20" rx="10" ry="5" fill="#fff" opacity="0.45"/>
+  </g>
+
+  <g transform="translate(990 290)">
+    <circle r="135" fill="url(#orbBig)" filter="url(#glow)"/>
+    <circle r="24" cx="-42" cy="-24" fill="#fff"/>
+    <circle r="24" cx="42" cy="-24" fill="#fff"/>
+    <circle r="12" cx="-40" cy="-20" fill="#0b1a3a"/>
+    <circle r="12" cx="44" cy="-20" fill="#0b1a3a"/>
+    <circle r="4" cx="-34" cy="-24" fill="#fff"/>
+    <circle r="4" cx="50" cy="-24" fill="#fff"/>
+    <path d="M -38 38 Q 0 78 38 38" stroke="#0b1a3a" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M -16 44 L -10 58 M 16 44 L 10 58" stroke="#0b1a3a" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(-60 -78)" fill="#ff3d8a">
+      <polygon points="0,0 -10,16 10,16"/>
+    </g>
+    <g transform="translate(60 -78)" fill="#ff3d8a">
+      <polygon points="0,0 -10,16 10,16"/>
+    </g>
+  </g>
+
+  <g font-family="'Space Grotesk', 'Inter', sans-serif" text-anchor="middle">
+    <text x="600" y="120" font-size="78" font-weight="800" fill="#ffffff" letter-spacing="2" filter="url(#glow)">MERGE FOR</text>
+    <text x="600" y="200" font-size="92" font-weight="800" fill="#ff5fb0" letter-spacing="3" filter="url(#glow)">BRAINROTS</text>
+  </g>
+
+  <g font-family="'Space Grotesk', 'Inter', sans-serif" text-anchor="middle">
+    <text x="600" y="240" font-size="20" font-weight="600" fill="#5ee9ff" letter-spacing="10">TAP · SPAWN · MERGE</text>
+  </g>
+
+  <g transform="translate(60 615)" font-family="'Space Grotesk', 'Inter', sans-serif">
+    <rect x="-12" y="-26" width="170" height="36" rx="18" fill="#ff5a1f"/>
+    <text x="0" y="-3" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="2">SAUCE LABS</text>
+  </g>
+
+  <g transform="translate(1080 625)" font-family="'Space Grotesk', 'Inter', sans-serif" text-anchor="end">
+    <text x="0" y="0" font-size="14" font-weight="600" fill="#ffffff" opacity="0.7" letter-spacing="2">by Paulo Corona</text>
+  </g>
+
+  <g fill="#ffd86b" opacity="0.85">
+    <circle cx="120" cy="80" r="2"/>
+    <circle cx="240" cy="140" r="1.5"/>
+    <circle cx="940" cy="90" r="2"/>
+    <circle cx="1120" cy="160" r="1.5"/>
+    <circle cx="400" cy="60" r="1.5"/>
+    <circle cx="820" cy="150" r="1.5"/>
+  </g>
+</svg>

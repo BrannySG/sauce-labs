@@ -51,4 +51,16 @@ export const games: GameEntry[] = [
     recommendedDevice: "Any",
     updatedAt: "2026-05-27",
   },
+  {
+    id: "merge-for-brainrots",
+    title: "Merge for Brainrots",
+    creator: "Paulo Corona",
+    tagline: "Tap, spawn, and merge unhinged Italian brainrot creatures into ever-bigger forms.",
+    status: "New",
+    thumbnail: "/games/merge-for-brainrots/thumb.svg",
+    playUrl: "https://paulocorona.github.io/vibe-merge-brainrot/",
+    orientation: "portrait",
+    recommendedDevice: "Any",
+    updatedAt: "2026-05-27",
+  },
 ];
