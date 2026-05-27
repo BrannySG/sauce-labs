@@ -55,10 +55,24 @@ All games are listed in [`src/data/games.ts`](src/data/games.ts). To add one:
 
 ## Deployment
 
-Either of these static hosts works out of the box:
+### GitHub Pages (active)
 
-- **Cloudflare Pages** (recommended). Connect this repo, set the build command to `npm run build` and the output directory to `dist`. Add a custom domain like `labs.saucestudios.com`.
-- **GitHub Pages**. Build locally or via Actions, then publish `dist/`. The relative-path build (`base: "./"`) means the site works under a project sub-path without extra config.
+This repo deploys to GitHub Pages via the workflow at [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Every push to `main` triggers a build and publishes `dist/` to Pages. The live site is:
+
+```
+https://brannysg.github.io/sauce-labs/
+```
+
+The project lives on a sub-path, so [`vite.config.ts`](vite.config.ts) sets `base` to `/sauce-labs/` for production builds (and for `npm run preview`) while keeping `/` for `npm run dev`. If you fork this repo under a different name, update the `base` value to match `/<your-repo-name>/`.
+
+To enable Pages on a freshly forked repo:
+
+1. In repo Settings -> Pages, set Source to **GitHub Actions**.
+2. Push to `main`. The workflow handles the rest.
+
+### Cloudflare Pages (alternative)
+
+Also works out of the box. Connect this repo, set the build command to `npm run build`, set the output directory to `dist`, and change the `base` in [`vite.config.ts`](vite.config.ts) to `/` (since Cloudflare typically serves at the domain root).
 
 ## What's deliberately not in V1
 
