@@ -1,5 +1,7 @@
 import {
   useEffect,
+  useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -16,6 +18,44 @@ interface PlayOverlayProps {
 // Used to cap the play surface so it never overflows the viewport.
 const PLAY_CHROME = "7.5rem";
 
+// Default render-size long edge per orientation. The iframe renders at
+// this many pixels and is then visually scaled to fit the play surface,
+// so the embedded game always gets a generous internal canvas to lay out
+// in — avoiding its own scrollbars without any per-game tuning.
+const DEFAULT_LONG_EDGE = {
+  landscape: 1280,
+  portrait: 960,
+} as const;
+
+function parseRatio(ratio: string): { w: number; h: number } {
+  const [wStr, hStr] = ratio.split("/").map((part) => part.trim());
+  const w = Number(wStr);
+  const h = Number(hStr);
+  return {
+    w: Number.isFinite(w) && w > 0 ? w : 16,
+    h: Number.isFinite(h) && h > 0 ? h : 9,
+  };
+}
+
+function getRatio(game: GameEntry): { w: number; h: number } {
+  if (game.aspectRatio) return parseRatio(game.aspectRatio);
+  if (game.orientation === "portrait") return { w: 9, h: 16 };
+  return { w: 16, h: 9 };
+}
+
+function getDesignSize(game: GameEntry): { width: number; height: number } {
+  if (game.designSize) return game.designSize;
+  const { w, h } = getRatio(game);
+  const longEdge =
+    game.orientation === "portrait"
+      ? DEFAULT_LONG_EDGE.portrait
+      : DEFAULT_LONG_EDGE.landscape;
+  if (w >= h) {
+    return { width: longEdge, height: Math.round((longEdge * h) / w) };
+  }
+  return { width: Math.round((longEdge * w) / h), height: longEdge };
+}
+
 function getPlaySurfaceClasses(orientation: GameEntry["orientation"]): string {
   if (orientation === "responsive") {
     return "w-full h-full max-w-[1400px]";
@@ -28,11 +68,7 @@ function getPlaySurfaceStyle(game: GameEntry): CSSProperties {
     return {};
   }
 
-  const ratio =
-    game.aspectRatio ?? (game.orientation === "portrait" ? "9 / 16" : "16 / 9");
-  const [wStr, hStr] = ratio.split("/").map((part) => part.trim());
-  const w = Number(wStr) || 16;
-  const h = Number(hStr) || 9;
+  const { w, h } = getRatio(game);
   const maxWidthPx = game.orientation === "portrait" ? 440 : 1152;
 
   // The container's width is the smaller of (orientation max width) and
@@ -48,8 +84,12 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [fullscreenSupported, setFullscreenSupported] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [iframeScale, setIframeScale] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const designSize = useMemo(() => getDesignSize(game), [game]);
+  const scaleEnabled = game.orientation !== "responsive";
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -78,6 +118,29 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
     document.addEventListener("fullscreenchange", onFsChange);
     return () => document.removeEventListener("fullscreenchange", onFsChange);
   }, []);
+
+  // Recompute the iframe scale whenever the play surface changes size, so
+  // the fixed-design-size iframe always visually fits its container.
+  useLayoutEffect(() => {
+    if (!scaleEnabled) return;
+    const el = containerRef.current;
+    if (!el) return;
+    const update = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+      const next = Math.min(
+        rect.width / designSize.width,
+        rect.height / designSize.height,
+      );
+      setIframeScale((prev) =>
+        Math.abs(prev - next) < 0.001 ? prev : next,
+      );
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [scaleEnabled, designSize.width, designSize.height]);
 
   const handleFullscreen = () => {
     const target = containerRef.current;
@@ -181,7 +244,21 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
             onLoad={() => setIframeLoaded(true)}
             allow="fullscreen; gamepad; autoplay; clipboard-write; accelerometer; gyroscope"
             allowFullScreen
-            className="h-full w-full border-0 bg-black"
+            className={
+              scaleEnabled
+                ? "absolute left-0 top-0 border-0 bg-black"
+                : "h-full w-full border-0 bg-black"
+            }
+            style={
+              scaleEnabled
+                ? {
+                    width: `${designSize.width}px`,
+                    height: `${designSize.height}px`,
+                    transform: `scale(${iframeScale})`,
+                    transformOrigin: "top left",
+                  }
+                : undefined
+            }
           />
         </div>
       </div>

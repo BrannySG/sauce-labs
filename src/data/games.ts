@@ -19,6 +19,14 @@ export interface GameEntry {
    * default (16/9 for landscape, 9/16 for portrait).
    */
   aspectRatio?: string;
+  /**
+   * Optional explicit render size (in CSS pixels) for the iframe. The
+   * iframe is rendered at this size and visually scaled to fit the play
+   * surface, so the embedded game always gets enough internal room to
+   * avoid its own scrollbars. If omitted, a sensible default is derived
+   * from the orientation + aspectRatio.
+   */
+  designSize?: { width: number; height: number };
   recommendedDevice?: RecommendedDevice;
   updatedAt?: string;
 }
