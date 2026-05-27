@@ -19,6 +19,18 @@ export interface GameEntry {
 
 export const games: GameEntry[] = [
   {
+    id: "tap-to-bounce",
+    title: "Tap to Bounce",
+    creator: "Alykia",
+    tagline: "Tap to bounce, hold to charge — chase the pink portal across neon arcade levels.",
+    status: "New",
+    thumbnail: "/games/tap-to-bounce/thumb.svg",
+    playUrl: "https://alykia.github.io/tap-to-bounce/",
+    orientation: "portrait",
+    recommendedDevice: "Any",
+    updatedAt: "2026-05-27",
+  },
+  {
     id: "vibe-tetris",
     title: "Vibe Tetris",
     creator: "Branny",

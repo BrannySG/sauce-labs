@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a0b3d"/>
+      <stop offset="0.55" stop-color="#3a1163"/>
+      <stop offset="1" stop-color="#6a1a7a"/>
+    </linearGradient>
+
+    <radialGradient id="orb" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#9b6bff" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#6b3fbf" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#6b3fbf" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd86b"/>
+      <stop offset="0.45" stop-color="#ff8e3c"/>
+      <stop offset="0.75" stop-color="#ff3d8a"/>
+      <stop offset="1" stop-color="#a3217a"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="0.5" cy="0.6" r="0.55">
+      <stop offset="0" stop-color="#ffb86b" stop-opacity="0.55"/>
+      <stop offset="0.6" stop-color="#ff3d8a" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#ff3d8a" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a0a52"/>
+      <stop offset="1" stop-color="#08020f"/>
+    </linearGradient>
+
+    <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d1a6b"/>
+      <stop offset="1" stop-color="#1a0834"/>
+    </linearGradient>
+
+    <filter id="neonPink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="neonCyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#sky)"/>
+
+  <circle cx="160" cy="120" r="180" fill="url(#orb)"/>
+
+  <g opacity="0.55">
+    <path d="M 0 60 L 30 90 L 60 60 L 90 90 L 120 60 L 150 90 L 180 60 L 210 90 L 240 60 L 270 90 L 300 60" stroke="#ff3d8a" stroke-width="3" fill="none" filter="url(#neonPink)"/>
+  </g>
+
+  <ellipse cx="600" cy="430" rx="340" ry="180" fill="url(#sunGlow)"/>
+
+  <g>
+    <path d="M 380 430 A 220 220 0 0 1 820 430 Z" fill="url(#sun)"/>
+    <g stroke="#1a0b3d" stroke-width="0" fill="#1a0b3d">
+      <rect x="380" y="360" width="440" height="6"/>
+      <rect x="380" y="378" width="440" height="5"/>
+      <rect x="380" y="395" width="440" height="4"/>
+      <rect x="380" y="410" width="440" height="3"/>
+      <rect x="380" y="423" width="440" height="3"/>
+    </g>
+  </g>
+
+  <path d="M 0 430 L 80 360 L 150 410 L 230 320 L 280 380 L 0 380 Z" fill="url(#mountain)" opacity="0.95"/>
+  <path d="M 1200 430 L 1110 340 L 1030 400 L 950 310 L 880 390 L 1200 390 Z" fill="url(#mountain)" opacity="0.95"/>
+
+  <rect x="0" y="430" width="1200" height="245" fill="url(#floor)"/>
+
+  <g stroke="#ff3d8a" stroke-opacity="0.85" stroke-width="1.6" fill="none">
+    <line x1="-600" y1="675" x2="600" y2="430"/>
+    <line x1="-400" y1="675" x2="600" y2="430"/>
+    <line x1="-200" y1="675" x2="600" y2="430"/>
+    <line x1="0" y1="675" x2="600" y2="430"/>
+    <line x1="200" y1="675" x2="600" y2="430"/>
+    <line x1="400" y1="675" x2="600" y2="430"/>
+    <line x1="600" y1="675" x2="600" y2="430"/>
+    <line x1="800" y1="675" x2="600" y2="430"/>
+    <line x1="1000" y1="675" x2="600" y2="430"/>
+    <line x1="1200" y1="675" x2="600" y2="430"/>
+    <line x1="1400" y1="675" x2="600" y2="430"/>
+    <line x1="1600" y1="675" x2="600" y2="430"/>
+    <line x1="1800" y1="675" x2="600" y2="430"/>
+  </g>
+
+  <g stroke="#ff3d8a" stroke-opacity="0.7" stroke-width="1.6" fill="none">
+    <line x1="0" y1="445" x2="1200" y2="445"/>
+    <line x1="0" y1="465" x2="1200" y2="465"/>
+    <line x1="0" y1="492" x2="1200" y2="492"/>
+    <line x1="0" y1="528" x2="1200" y2="528"/>
+    <line x1="0" y1="575" x2="1200" y2="575"/>
+    <line x1="0" y1="635" x2="1200" y2="635"/>
+  </g>
+
+  <g transform="translate(820 470)">
+    <polygon points="0,-26 22,14 -22,14" fill="#7a3dff" opacity="0.95" filter="url(#neonPink)"/>
+  </g>
+
+  <g transform="translate(380 530)">
+    <polygon points="0,-22 18,12 -18,12" fill="#ff5fb0" opacity="0.95" filter="url(#neonPink)"/>
+  </g>
+
+  <g transform="translate(940 410)">
+    <polygon points="0,-18 15,10 -15,10" fill="#ff5fb0" opacity="0.9" filter="url(#neonPink)"/>
+  </g>
+
+  <g font-family="'Courier New', 'Consolas', monospace" text-anchor="middle">
+    <text x="600" y="245" font-size="92" font-weight="700" fill="#ff3d8a" letter-spacing="10" filter="url(#neonPink)">TAP TO</text>
+    <text x="600" y="335" font-size="92" font-weight="700" fill="#ff3d8a" letter-spacing="10" filter="url(#neonPink)">BOUNCE</text>
+  </g>
+
+  <g font-family="'Courier New', 'Consolas', monospace" text-anchor="middle">
+    <text x="600" y="385" font-size="20" font-weight="600" fill="#5ee9ff" letter-spacing="6" filter="url(#neonCyan)">NEON ARCADE</text>
+  </g>
+
+  <g transform="translate(60 615)" font-family="'Space Grotesk', 'Inter', sans-serif">
+    <rect x="-12" y="-26" width="170" height="36" rx="18" fill="#ff5a1f"/>
+    <text x="0" y="-3" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="2">SAUCE LABS</text>
+  </g>
+</svg>
