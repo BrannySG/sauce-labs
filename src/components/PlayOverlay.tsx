@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type MouseEvent as ReactMouseEvent,
+} from "react";
 import type { GameEntry } from "../data/games";
 
 interface PlayOverlayProps {
@@ -6,16 +12,36 @@ interface PlayOverlayProps {
   onClose: () => void;
 }
 
-function orientationClasses(orientation: GameEntry["orientation"]): string {
-  switch (orientation) {
-    case "portrait":
-      return "w-full max-w-[440px] aspect-[9/16]";
-    case "landscape":
-      return "w-full max-w-6xl aspect-video";
-    case "responsive":
-    default:
-      return "w-full h-full max-w-[1400px]";
+// Approx. height taken up by the overlay header bar + content padding.
+// Used to cap the play surface so it never overflows the viewport.
+const PLAY_CHROME = "7.5rem";
+
+function getPlaySurfaceClasses(orientation: GameEntry["orientation"]): string {
+  if (orientation === "responsive") {
+    return "w-full h-full max-w-[1400px]";
   }
+  return "w-full";
+}
+
+function getPlaySurfaceStyle(game: GameEntry): CSSProperties {
+  if (game.orientation === "responsive") {
+    return {};
+  }
+
+  const ratio =
+    game.aspectRatio ?? (game.orientation === "portrait" ? "9 / 16" : "16 / 9");
+  const [wStr, hStr] = ratio.split("/").map((part) => part.trim());
+  const w = Number(wStr) || 16;
+  const h = Number(hStr) || 9;
+  const maxWidthPx = game.orientation === "portrait" ? 440 : 1152;
+
+  // The container's width is the smaller of (orientation max width) and
+  // (the width that keeps an aspect-ratio box inside the remaining viewport
+  // height). This prevents the outer wrapper from ever needing scrollbars.
+  return {
+    maxWidth: `min(${maxWidthPx}px, calc((100dvh - ${PLAY_CHROME}) * ${w} / ${h}))`,
+    aspectRatio: `${w} / ${h}`,
+  };
 }
 
 export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
@@ -127,11 +153,14 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
         </div>
       </div>
 
-      <div className="flex flex-1 items-center justify-center overflow-auto p-3 sm:p-6">
+      <div className="flex flex-1 items-center justify-center overflow-hidden p-3 sm:p-6">
         <div
           ref={containerRef}
-          className={`relative flex items-center justify-center overflow-hidden rounded-xl bg-black shadow-2xl shadow-black/50 ring-1 ring-white/10 ${orientationClasses(game.orientation)}`}
-          style={{ animation: "sauce-scale-in 200ms ease-out both" }}
+          className={`relative flex items-center justify-center overflow-hidden rounded-xl bg-black shadow-2xl shadow-black/50 ring-1 ring-white/10 ${getPlaySurfaceClasses(game.orientation)}`}
+          style={{
+            animation: "sauce-scale-in 200ms ease-out both",
+            ...getPlaySurfaceStyle(game),
+          }}
         >
           {!iframeLoaded && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[var(--color-surface)] text-[var(--color-muted)]">
