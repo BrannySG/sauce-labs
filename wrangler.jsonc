@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sauce-labs",
+  "compatibility_date": "2026-05-27",
+  // Deploy as a Workers Static Assets project: no Worker script, just
+  // upload the built site from ./dist. `single-page-application` makes
+  // unknown paths fall back to /index.html, which keeps any future
+  // client-side routing (or just deep links) working.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
