@@ -38,7 +38,7 @@ export const games: GameEntry[] = [
     status: "Prototype",
     thumbnail: "/games/vibe-tetris/thumb.svg",
     playUrl: "https://brannysg.github.io/vibe-tetris/",
-    orientation: "portrait",
+    orientation: "landscape",
     recommendedDevice: "Any",
     updatedAt: "2026-05-27",
   },

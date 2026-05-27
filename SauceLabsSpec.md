@@ -1,6 +1,6 @@
 Sauce Labs V1 — Build Spec
 
-You are building Sauce Labs, a simple public website for hosting and sharing playable web game prototypes made by the Sauce Studios team.
+You are building Sauce Labs, a simple public website for hosting and sharing playable web game prototypes made by the Sauce Games team.
 
 The site should feel like a lightweight public gallery of experiments, closer to Neal.fun than Miniclip. It is not a full game portal, not a social platform, and not a polished commercial storefront.
 
@@ -144,17 +144,17 @@ Site hosting recommendation
 
 The main Sauce Labs site should eventually live at something like:
 
-https://labs.saucestudios.com
+https://labs.saucegames.io
 
 Recommended final URL:
 
-labs.saucestudios.com
+labs.saucegames.io
 
 Alternative:
 
-play.saucestudios.com
+play.saucegames.io
 
-Use labs.saucestudios.com if possible, because the project is called Sauce Labs, and it frames the site as playful experiments rather than a polished arcade platform.
+Use labs.saucegames.io if possible, because the project is called Sauce Labs, and it frames the site as playful experiments rather than a polished arcade platform.
 
 Hosting options
 
@@ -191,7 +191,7 @@ Choose final URL.
 
 Recommended:
 
-labs.saucestudios.com
+labs.saucegames.io
 Decide where DNS is managed.
 
 If the domain is already managed through Cloudflare, Cloudflare Pages is especially convenient.
@@ -310,7 +310,7 @@ not too “gamer portal”
 Suggested main copy:
 
 Sauce Labs
-Playable experiments from Sauce Studios.
+Playable experiments from Sauce Games.
 
 Alternative:
 
@@ -322,7 +322,7 @@ Homepage layout:
 Header
   Sauce Labs
   Short intro
-  Optional small Sauce Studios link
+  Optional small Sauce Games link
 
 Game grid
   Cards

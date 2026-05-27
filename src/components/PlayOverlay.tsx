@@ -78,12 +78,12 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
       className="fixed inset-0 z-50 flex flex-col bg-black/85 backdrop-blur-sm"
       style={{ animation: "sauce-fade-in 160ms ease-out both" }}
     >
-      <div className="flex flex-shrink-0 items-center justify-between gap-3 border-b border-white/10 bg-[var(--color-canvas)]/80 px-4 py-3 sm:px-6">
+      <div className="flex flex-shrink-0 items-center justify-between gap-3 border-b border-white/10 bg-[#15151d] px-4 py-3 sm:px-6">
         <div className="min-w-0 flex-1">
           <h2 className="truncate font-display text-base font-semibold text-white sm:text-lg">
             {game.title}
           </h2>
-          <p className="truncate text-xs text-[var(--color-muted)]">
+          <p className="truncate text-xs font-medium text-white/65">
             by {game.creator}
           </p>
         </div>
@@ -95,7 +95,7 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
               onClick={handleFullscreen}
               aria-label={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
               title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
-              className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 text-xs font-medium text-white/90 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sauce-400)]"
+              className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 text-xs font-medium text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sauce-400)]"
             >
               <FullscreenIcon active={isFullscreen} />
               <span className="hidden sm:inline">
@@ -108,7 +108,7 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
             href={game.playUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 text-xs font-medium text-white/90 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sauce-400)]"
+            className="inline-flex h-9 items-center justify-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 text-xs font-medium text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sauce-400)]"
             title="Open game in new tab"
           >
             <ExternalIcon />
@@ -120,7 +120,7 @@ export function PlayOverlay({ game, onClose }: PlayOverlayProps) {
             onClick={onClose}
             aria-label="Close play view"
             title="Close (Esc)"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/90 transition hover:bg-[var(--color-sauce-500)]/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sauce-400)]"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/10 text-white transition hover:bg-[var(--color-sauce-500)]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-sauce-400)]"
           >
             <CloseIcon />
           </button>

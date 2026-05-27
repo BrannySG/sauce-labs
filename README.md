@@ -1,6 +1,6 @@
 # Sauce Labs
 
-A lightweight public gallery for playable web experiments made by the Sauce Studios team. Browse a card, click a card, play immediately.
+A lightweight public gallery for playable web experiments made by the Sauce Games team. Browse a card, click a card, play immediately.
 
 The site is a static Vite + React + TypeScript app styled with Tailwind v4. Games are hosted elsewhere (typically GitHub Pages) and embedded via iframes; Sauce Labs is purely the storefront.
 
@@ -20,7 +20,7 @@ npm run build
 npm run preview
 ```
 
-The build emits a fully static site to `dist/`. `vite.config.ts` sets `base: "./"` so the output works whether deployed at a domain root (e.g. `labs.saucestudios.com`) or under a sub-path (e.g. GitHub project pages).
+The build emits a fully static site to `dist/`. `vite.config.ts` sets `base: "./"` so the output works whether deployed at a domain root (e.g. `labs.saucegames.io`) or under a sub-path (e.g. GitHub project pages).
 
 ## Adding a game
 
