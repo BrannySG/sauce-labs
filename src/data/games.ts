@@ -15,18 +15,12 @@ export interface GameEntry {
   orientation: GameOrientation;
   /**
    * Optional CSS aspect-ratio override (e.g. "3 / 2", "16 / 10").
-   * Use when the game's UI needs more breathing room than the orientation
-   * default (16/9 for landscape, 9/16 for portrait).
+   * Use when the game's UI needs a different shape than the orientation
+   * default (16/9 for landscape, 9/16 for portrait) — for example if the
+   * default produces empty bands or internal scrollbars at the container
+   * size.
    */
   aspectRatio?: string;
-  /**
-   * Optional explicit render size (in CSS pixels) for the iframe. The
-   * iframe is rendered at this size and visually scaled to fit the play
-   * surface, so the embedded game always gets enough internal room to
-   * avoid its own scrollbars. If omitted, a sensible default is derived
-   * from the orientation + aspectRatio.
-   */
-  designSize?: { width: number; height: number };
   recommendedDevice?: RecommendedDevice;
   updatedAt?: string;
 }
@@ -53,7 +47,7 @@ export const games: GameEntry[] = [
     thumbnail: "/games/vibe-tetris/thumb.svg",
     playUrl: "https://brannysg.github.io/vibe-tetris/",
     orientation: "landscape",
-    aspectRatio: "3 / 2",
+    aspectRatio: "4 / 3",
     recommendedDevice: "Any",
     updatedAt: "2026-05-27",
   },

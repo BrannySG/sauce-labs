@@ -39,18 +39,18 @@ All games are listed in [`src/data/games.ts`](src/data/games.ts). To add one:
      playUrl: "https://yourname.github.io/my-new-game/",
      orientation: "portrait",             // portrait | landscape | responsive
      aspectRatio: "3 / 2",                // optional CSS aspect-ratio override
-     designSize: { width: 1280, height: 853 }, // optional fixed render size
      recommendedDevice: "Any",            // optional
      updatedAt: "2026-05-27"              // optional
    }
    ```
 
-   The play overlay renders each iframe at a generous "design size" and
-   visually scales it down to fit the container, so the embedded game
-   always has enough internal room to lay out without scrollbars. The
-   default design size is derived from the orientation + aspect ratio, so
-   most games don't need `designSize` set explicitly — only override when
-   a game has unusual minimum-size requirements.
+   The play overlay sizes the iframe container to fit the viewport using
+   the orientation default (16/9 for landscape, 9/16 for portrait). The
+   optional `aspectRatio` is the one knob to reach for if a game's UI
+   doesn't fit that default — for example if you see empty bands on the
+   sides or internal scrollbars in the embedded game. In fullscreen the
+   container drops its aspect/width constraints so the game gets the
+   whole screen.
 
 2. Drop a 1200×675 (16:9) thumbnail at `public/games/<id>/thumb.png` (or `.svg`, `.jpg`, `.webp`). If the file is missing the card automatically falls back to a generated gradient with the game's initials, so nothing breaks.
 
