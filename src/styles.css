@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-sauce-50: #fff5ee;
+  --color-sauce-100: #ffe6d4;
+  --color-sauce-200: #ffc8a3;
+  --color-sauce-300: #ffa169;
+  --color-sauce-400: #ff7a3a;
+  --color-sauce-500: #ff5a1f;
+  --color-sauce-600: #e6431a;
+  --color-sauce-700: #b8320f;
+  --color-sauce-800: #8a2509;
+  --color-sauce-900: #5c1805;
+}
+
+:root {
+  --color-canvas: #faf8f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3efe6;
+  --color-border: #e6e0d2;
+  --color-border-strong: #cfc7b3;
+  --color-text: #1a1814;
+  --color-muted: #6b6557;
+  --color-status-bg: rgba(255, 255, 255, 0.92);
+  --color-status-text: #2a2620;
+  --color-status-ring: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --color-canvas: #0e0e12;
+  --color-surface: #16161d;
+  --color-surface-2: #1e1e28;
+  --color-border: #25252f;
+  --color-border-strong: #3a3a48;
+  --color-text: #f4f4f6;
+  --color-muted: #8e8e9c;
+  --color-status-bg: rgba(20, 20, 26, 0.85);
+  --color-status-text: #f4f4f6;
+  --color-status-ring: rgba(255, 255, 255, 0.08);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background-color: var(--color-canvas);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+:root:not(.dark) {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: var(--color-text);
+  min-height: 100dvh;
+}
+
+body.overlay-open {
+  overflow: hidden;
+}
+
+@keyframes sauce-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sauce-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sauce-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

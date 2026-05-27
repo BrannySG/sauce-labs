@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a1530"/>
+      <stop offset="1" stop-color="#0b0b18"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="675" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff7a3a" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#ff7a3a" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+
+  <g transform="translate(380 80)">
+    <g stroke="#0b0b18" stroke-width="3">
+      <rect x="0" y="0" width="80" height="80" rx="6" fill="#00d9c0"/>
+      <rect x="80" y="0" width="80" height="80" rx="6" fill="#00d9c0"/>
+      <rect x="160" y="0" width="80" height="80" rx="6" fill="#00d9c0"/>
+      <rect x="240" y="0" width="80" height="80" rx="6" fill="#00d9c0"/>
+
+      <rect x="40" y="120" width="80" height="80" rx="6" fill="#ffb547"/>
+      <rect x="120" y="120" width="80" height="80" rx="6" fill="#ffb547"/>
+      <rect x="200" y="120" width="80" height="80" rx="6" fill="#ffb547"/>
+      <rect x="120" y="200" width="80" height="80" rx="6" fill="#ffb547"/>
+
+      <rect x="0" y="320" width="80" height="80" rx="6" fill="#3b82f6"/>
+      <rect x="0" y="400" width="80" height="80" rx="6" fill="#3b82f6"/>
+      <rect x="80" y="400" width="80" height="80" rx="6" fill="#3b82f6"/>
+      <rect x="160" y="400" width="80" height="80" rx="6" fill="#3b82f6"/>
+
+      <rect x="260" y="320" width="80" height="80" rx="6" fill="#22c55e"/>
+      <rect x="340" y="320" width="80" height="80" rx="6" fill="#22c55e"/>
+      <rect x="180" y="400" width="80" height="80" rx="6" fill="#22c55e" opacity="0"/>
+      <rect x="260" y="400" width="80" height="80" rx="6" fill="#22c55e"/>
+      <rect x="340" y="400" width="80" height="80" rx="6" fill="#22c55e" opacity="0"/>
+
+      <rect x="120" y="400" width="80" height="80" rx="6" fill="#ec4899"/>
+      <rect x="200" y="400" width="80" height="80" rx="6" fill="#ec4899"/>
+      <rect x="280" y="400" width="80" height="80" rx="6" fill="#ec4899"/>
+      <rect x="360" y="400" width="80" height="80" rx="6" fill="#ec4899"/>
+    </g>
+  </g>
+
+  <g transform="translate(820 220)" font-family="'Space Grotesk', 'Inter', sans-serif">
+    <text x="0" y="0" font-size="72" font-weight="700" fill="#ffffff" letter-spacing="-1">VIBE</text>
+    <text x="0" y="80" font-size="72" font-weight="700" fill="#ff7a3a" letter-spacing="-1">TETRIS</text>
+    <text x="0" y="130" font-size="20" font-weight="500" fill="#8a8a9a" letter-spacing="3">A FALLING-BLOCK PROTOTYPE</text>
+  </g>
+
+  <g transform="translate(60 600)" font-family="'Space Grotesk', 'Inter', sans-serif">
+    <rect x="-12" y="-26" width="170" height="36" rx="18" fill="#ff5a1f"/>
+    <text x="0" y="-3" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="2">SAUCE LABS</text>
+  </g>
+</svg>
