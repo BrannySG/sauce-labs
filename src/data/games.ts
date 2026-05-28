@@ -63,4 +63,16 @@ export const games: GameEntry[] = [
     recommendedDevice: "Any",
     updatedAt: "2026-05-27",
   },
+  {
+    id: "crimson-ascent",
+    title: "Crimson Ascent",
+    creator: "Alykia",
+    tagline: "Climb a gothic cathedral as a vampire heroine — dash, wall-jump, and shoot through the night.",
+    status: "New",
+    thumbnail: "/games/crimson-ascent/thumb.jpg",
+    playUrl: "https://alykia.github.io/crimson-ascent/",
+    orientation: "landscape",
+    recommendedDevice: "Desktop",
+    updatedAt: "2026-05-28",
+  },
 ];
