@@ -1,0 +1,32 @@
+---
+description: Always deploy Sauce Labs after validating a change
+alwaysApply: true
+---
+
+# Deploy After Validating
+
+When you make changes to this repo, the workflow is **validate → commit → push → confirm deploy**. Don't stop after the local edit — a change isn't done until it's live.
+
+## Workflow
+
+1. **Validate locally** before committing:
+   - `npm run build` (or at minimum `npx tsc --noEmit -p tsconfig.app.json`) must pass.
+   - For visual / data changes (e.g. `src/data/games.ts`, thumbnails, components), sanity-check the result — read updated files, view new images, etc.
+2. **Commit** with a concise message describing the user-visible change.
+3. **Push to `main`** — this triggers the GitHub Pages deploy at `.github/workflows/deploy.yml`.
+4. **Confirm the deploy** kicked off and is healthy:
+
+   ```bash
+   gh run list --workflow=deploy.yml --limit 1
+   gh run watch <run-id>   # or poll until status == completed, conclusion == success
+   ```
+
+5. **Report back** with the live URL (`https://brannysg.github.io/sauce-labs/`) and the run conclusion.
+
+## When to skip
+
+- Pure docs / comments that don't affect the built site.
+- Work-in-progress on a non-`main` branch the user explicitly asked you to keep local.
+- The user explicitly says "don't deploy" or "don't push".
+
+If unsure, ask once — don't silently skip the deploy step.
