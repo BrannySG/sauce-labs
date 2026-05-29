@@ -25,7 +25,7 @@ export interface GameEntry {
   updatedAt?: string;
 }
 
-export const games: GameEntry[] = [
+const gameEntries: GameEntry[] = [
   {
     id: "tap-to-bounce",
     title: "Tap to Bounce",
@@ -112,3 +112,14 @@ export const games: GameEntry[] = [
     updatedAt: "2026-05-29",
   },
 ];
+
+/** Newest games first; same-day entries keep later additions ahead. */
+export const games: GameEntry[] = [...gameEntries]
+  .map((game, index) => ({ game, index }))
+  .sort((a, b) => {
+    const dateA = a.game.updatedAt ?? "";
+    const dateB = b.game.updatedAt ?? "";
+    if (dateA !== dateB) return dateB.localeCompare(dateA);
+    return b.index - a.index;
+  })
+  .map(({ game }) => game);
