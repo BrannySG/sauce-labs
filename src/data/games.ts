@@ -89,7 +89,7 @@ const gameEntries: GameEntry[] = [
   },
   {
     id: "card-renderer",
-    title: "Premium 3D Card Renderer",
+    title: "Card Renderer",
     creator: "Branny",
     tagline: "Flip and tilt a premium trading card with holographic foil, parallax, and sparkle effects.",
     status: "New",
