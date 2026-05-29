@@ -87,4 +87,16 @@ export const games: GameEntry[] = [
     recommendedDevice: "Desktop",
     updatedAt: "2026-05-29",
   },
+  {
+    id: "card-renderer",
+    title: "Premium 3D Card Renderer",
+    creator: "Branny",
+    tagline: "Flip and tilt a premium trading card with holographic foil, parallax, and sparkle effects.",
+    status: "New",
+    thumbnail: "/games/card-renderer/thumb.jpg",
+    playUrl: "https://brannysg.github.io/card-renderer/",
+    orientation: "responsive",
+    recommendedDevice: "Any",
+    updatedAt: "2026-05-29",
+  },
 ];
