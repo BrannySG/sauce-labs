@@ -99,4 +99,16 @@ export const games: GameEntry[] = [
     recommendedDevice: "Any",
     updatedAt: "2026-05-29",
   },
+  {
+    id: "typerogue",
+    title: "TypeRogue",
+    creator: "Damon",
+    tagline: "Type enemy names to strike them down as you fight through a cursed dungeon — a typing roguelike.",
+    status: "New",
+    thumbnail: "/games/typerogue/thumb.jpg",
+    playUrl: "https://damonsg.github.io/Vibe-TypeRogue/",
+    orientation: "landscape",
+    recommendedDevice: "Desktop",
+    updatedAt: "2026-05-29",
+  },
 ];
