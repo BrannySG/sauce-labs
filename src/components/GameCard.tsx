@@ -1,6 +1,5 @@
 import { useState, type KeyboardEvent } from "react";
 import type { GameEntry } from "../data/games";
-import { StatusPill } from "./StatusPill";
 import { ThumbnailFallback } from "./ThumbnailFallback";
 
 interface GameCardProps {
@@ -47,9 +46,6 @@ export function GameCard({ game, onPlay }: GameCardProps) {
             className="h-full w-full object-cover"
           />
         )}
-        <div className="absolute right-2.5 top-2.5">
-          <StatusPill status={game.status} />
-        </div>
       </div>
 
       <p className="mt-3 px-1 text-sm">
