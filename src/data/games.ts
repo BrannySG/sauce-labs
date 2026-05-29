@@ -75,4 +75,16 @@ export const games: GameEntry[] = [
     recommendedDevice: "Desktop",
     updatedAt: "2026-05-28",
   },
+  {
+    id: "tetris-roguelike",
+    title: "Tetris Rogue-Like",
+    creator: "Qasim",
+    tagline: "Stack tetrominoes to attack an AI rival — a roguelike twist on the classic falling-block game.",
+    status: "New",
+    thumbnail: "/games/tetris-roguelike/thumb.jpg",
+    playUrl: "https://qasimali9001.github.io/TetrisRogueLikeThingy/",
+    orientation: "landscape",
+    recommendedDevice: "Desktop",
+    updatedAt: "2026-05-29",
+  },
 ];
