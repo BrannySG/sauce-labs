@@ -111,6 +111,18 @@ const gameEntries: GameEntry[] = [
     recommendedDevice: "Desktop",
     updatedAt: "2026-05-29",
   },
+  {
+    id: "tap-for-brainrots",
+    title: "Tap for Brainrots",
+    creator: "Branny",
+    tagline: "Tap chests, collect loot, and keep the idle grind going in this chaotic brainrot clicker.",
+    status: "New",
+    thumbnail: "/games/tap-for-brainrots/thumb.jpg",
+    playUrl: "https://brannysg.github.io/TapForBrainrots/",
+    orientation: "portrait",
+    recommendedDevice: "Any",
+    updatedAt: "2026-05-30",
+  },
 ];
 
 /** Newest games first; same-day entries keep later additions ahead. */
