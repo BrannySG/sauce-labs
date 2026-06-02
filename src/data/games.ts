@@ -71,7 +71,7 @@ const gameEntries: GameEntry[] = [
     status: "New",
     thumbnail: "/games/crimson-ascent/thumb.jpg",
     playUrl: "https://alykia.github.io/crimson-ascent/",
-    orientation: "landscape",
+    orientation: "portrait",
     recommendedDevice: "Desktop",
     updatedAt: "2026-05-28",
   },
