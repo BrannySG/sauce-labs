@@ -123,6 +123,18 @@ const gameEntries: GameEntry[] = [
     recommendedDevice: "Any",
     updatedAt: "2026-05-30",
   },
+  {
+    id: "dont-stop-pop",
+    title: "Don't Stop Pop",
+    creator: "Lei",
+    tagline: "Pop as many balloons as you can before they float away in this bright party-themed tap challenge.",
+    status: "New",
+    thumbnail: "/games/dont-stop-pop/thumb.png",
+    playUrl: "https://leisumyi.github.io/Don-t-Stop-Pop-/",
+    orientation: "portrait",
+    recommendedDevice: "Mobile",
+    updatedAt: "2026-06-02",
+  },
 ];
 
 /** Newest games first; same-day entries keep later additions ahead. */
