@@ -1,0 +1,16 @@
+{
+  "name": "clicker-demo",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Sauce Games clicker demo: a testbed proving the Sauce SDK leaderboard + analytics flow.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^8.0.14"
+  }
+}

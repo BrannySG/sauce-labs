@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sauce-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-27",
+  // D1 database binding. Create the DB once with:
+  //   wrangler d1 create sauce_labs
+  // then paste the returned `database_id` below.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sauce_labs",
+      "database_id": "55cd0660-efd4-4d85-829b-549d6bc55c8d"
+    }
+  ],
+  "vars": {
+    // Comma-separated list of explicitly allowed origins. Any "*.github.io"
+    // origin and localhost are always allowed by the CORS helper, so this is
+    // for first-party hosts. Override per-environment with `wrangler secret`
+    // or environment vars if needed.
+    "ALLOWED_ORIGINS": "https://labs.saucegames.io,https://saucegames.io"
+  }
+  // Secrets (set with `wrangler secret put <NAME>`):
+  //   HASH_SALT    - salt for hashing IP / user-agent (privacy). Required in prod.
+  //   ADMIN_TOKEN  - optional token guarding the /api/v1/admin/* debug routes.
+}

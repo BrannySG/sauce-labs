@@ -27,6 +27,18 @@ export interface GameEntry {
 
 const gameEntries: GameEntry[] = [
   {
+    id: "clicker-demo",
+    title: "Sauce Clicker",
+    creator: "Sauce Games",
+    tagline: "Click fast, submit your score, and test the Sauce leaderboard and analytics SDK.",
+    status: "Prototype",
+    thumbnail: "/games/clicker-demo/thumb.svg",
+    playUrl: "https://brannysg.github.io/sauce-clicker-sdk-test/",
+    orientation: "portrait",
+    recommendedDevice: "Any",
+    updatedAt: "2026-06-03",
+  },
+  {
     id: "tap-to-bounce",
     title: "Tap to Bounce",
     creator: "Alykia",

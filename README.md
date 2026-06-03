@@ -83,6 +83,16 @@ To enable Pages on a freshly forked repo:
 
 Also works out of the box. Connect this repo, set the build command to `npm run build`, set the output directory to `dist`, and change the `base` in [`vite.config.ts`](vite.config.ts) to `/` (since Cloudflare typically serves at the domain root).
 
+## Developer platform (SDK + API + demo game)
+
+Alongside the storefront, this repo now hosts the first pass at a lightweight internal platform so prototypes can have leaderboards and analytics. These live in independent subfolders (each with its own `package.json`) and do **not** affect the storefront build or its GitHub Pages deploy:
+
+- [`sdk/`](sdk/README.md) — the **Sauce SDK**, a tiny browser client (`Sauce.init`, `analytics.*`, `leaderboards.*`). This is what games integrate with.
+- [`api/`](api/README.md) — the **Sauce API**, a Cloudflare Worker + D1 backend (leaderboard scores + analytics events). Targets `api.saucegames.io`.
+- [`games/clicker-demo/`](games/clicker-demo/README.md) — a minimal **clicker game** that exercises the whole flow and serves as the reference integration.
+
+Run the API (`cd api && npm i && npm run db:local && npm run dev`) then the demo (`cd games/clicker-demo && npm i && npm run dev`) to try it locally. See each folder's README for details.
+
 ## What's deliberately not in V1
 
 Per the spec, this build skips: accounts, ratings, comments, leaderboards, a CMS, a database, and any backend logic. The game list is edited by hand in `src/data/games.ts`. Shareable URL state (`?game=...`), status filtering, and latest sorting are also deferred and easy to add later.

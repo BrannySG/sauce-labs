@@ -1,0 +1,264 @@
+:root {
+  --bg: #0f1020;
+  --panel: #191a2e;
+  --accent: #ff5c8a;
+  --accent-2: #6c5ce7;
+  --text: #f4f4fb;
+  --muted: #9aa0c0;
+  --good: #36d399;
+  --bad: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 50% -10%, #2a2350 0%, var(--bg) 55%);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 48px;
+}
+
+.app {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.topbar .sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.stage,
+.leaderboard {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.stat .value {
+  font-size: 34px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.clicker {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 320px;
+  border: none;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: 800;
+  color: white;
+  cursor: pointer;
+  background: radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+  box-shadow: 0 16px 40px rgba(108, 92, 231, 0.35);
+  transition: transform 0.05s ease, box-shadow 0.2s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.clicker:active {
+  transform: scale(0.96);
+}
+
+.clicker:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clicker.pop {
+  animation: pop 0.12s ease;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.hint {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  min-height: 18px;
+}
+
+.submit-form {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.submit-form .result {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.submit-form label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input[type="text"] {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text);
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid var(--accent-2);
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+button:not(.clicker) {
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: var(--accent-2);
+}
+
+button.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.msg {
+  min-height: 18px;
+  font-size: 14px;
+  margin: 2px 0 0;
+}
+
+.msg.good {
+  color: var(--good);
+}
+
+.msg.bad {
+  color: var(--bad);
+}
+
+.lb-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.lb-head h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.lb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lb-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 15px;
+}
+
+.lb-list li .rank {
+  width: 24px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-list li .name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lb-list li .pts {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.lb-list li.empty {
+  justify-content: center;
+  color: var(--muted);
+  background: transparent;
+}
+
+.footer {
+  text-align: center;
+}
+
+.conn {
+  font-size: 12px;
+  color: var(--muted);
+}
