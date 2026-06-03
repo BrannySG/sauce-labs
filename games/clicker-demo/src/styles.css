@@ -72,8 +72,7 @@ body {
 
 /* --- Top bar --------------------------------------------------------- */
 
-.topbar,
-.footer {
+.topbar {
   grid-column: 1 / -1;
 }
 
@@ -722,18 +721,6 @@ input[type="text"]:focus {
   color: var(--muted);
   background: transparent;
   border: none;
-}
-
-/* --- Footer ---------------------------------------------------------- */
-
-.footer {
-  text-align: center;
-  align-self: start;
-}
-
-.conn {
-  font-size: 12px;
-  color: var(--muted);
 }
 
 /* --- Responsive ------------------------------------------------------ */

@@ -433,7 +433,6 @@ soundToggle.addEventListener("click", () => {
 initAudio();
 syncSoundToggle();
 renderBest();
-$("conn").textContent = `API: ${sauce.apiBaseUrl}`;
 
 // Initial leaderboard load.
 void loadLeaderboard();
