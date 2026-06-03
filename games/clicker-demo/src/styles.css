@@ -21,6 +21,13 @@
   box-sizing: border-box;
 }
 
+/* The HTML `hidden` attribute only applies `display:none` at low priority, so
+   any element with an explicit `display` (e.g. .ready-overlay, .submit-fields)
+   would stay visible. Force it to win — toggling `.hidden` in JS must hide. */
+[hidden] {
+  display: none !important;
+}
+
 html,
 body {
   margin: 0;
