@@ -34,7 +34,7 @@ const gameEntries: GameEntry[] = [
     status: "Prototype",
     thumbnail: "/games/clicker-demo/thumb.svg",
     playUrl: "https://brannysg.github.io/sauce-clicker-sdk-test/",
-    orientation: "portrait",
+    orientation: "landscape",
     recommendedDevice: "Any",
     updatedAt: "2026-06-03",
   },
