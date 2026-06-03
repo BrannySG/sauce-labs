@@ -36,6 +36,22 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Build the in-repo Sauce Clicker and nest it under the storefront's
+      # Pages site at /play/clicker-demo/ so it ships from this single repo
+      # (no separate deploy). Its vite base is "./" so it works under a sub-path.
+      - name: Install clicker dependencies
+        run: npm ci
+        working-directory: games/clicker-demo
+
+      - name: Build clicker
+        run: npm run build
+        working-directory: games/clicker-demo
+
+      - name: Stage clicker into Pages output
+        run: |
+          mkdir -p dist/play/clicker-demo
+          cp -r games/clicker-demo/dist/. dist/play/clicker-demo/
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

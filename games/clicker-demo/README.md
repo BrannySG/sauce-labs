@@ -39,20 +39,21 @@ npm run build    # static output in dist/
 ```
 
 ## Deploying + listing on Sauce Labs
-1. Host the built `dist/` anywhere static — its own GitHub Pages repo (consistent with the other games) or Cloudflare.
-2. Add an entry to the Labs registry at [`src/data/games.ts`](../../src/data/games.ts) (repo root), following the existing format:
-   ```ts
-   {
-     id: "clicker-demo",
-     title: "Sauce Clicker",
-     creator: "Sauce Games",
-     tagline: "A tiny clicker testbed wired to the Sauce leaderboard + analytics SDK.",
-     status: "Prototype",
-     thumbnail: "/games/clicker-demo/thumb.svg",
-     playUrl: "https://<your-host>/clicker-demo/",
-     orientation: "portrait",
-     recommendedDevice: "Any",
-     updatedAt: "2026-06-03",
-   }
-   ```
-3. For production, make sure the game's host origin is allowed by the API's CORS rules (any `*.github.io` already is; add first-party hosts via the API's `ALLOWED_ORIGINS` var).
+This game ships from **this repo** as part of the Sauce Labs Pages deploy — there is no separate host to keep in sync. The deploy workflow ([`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml)) builds the clicker after the storefront and nests it under the Pages site at:
+
+```
+https://brannysg.github.io/sauce-labs/play/clicker-demo/
+```
+
+The registry entry in [`src/data/games.ts`](../../src/data/games.ts) already points `playUrl` there:
+```ts
+{
+  id: "clicker-demo",
+  title: "Sauce Clicker",
+  creator: "Sauce Games",
+  // ...
+  playUrl: "https://brannysg.github.io/sauce-labs/play/clicker-demo/",
+}
+```
+
+Because the build origin is `*.github.io`, it is already allowed by the API's CORS rules (add first-party hosts via the API's `ALLOWED_ORIGINS` var). The clicker's `vite.config.ts` uses `base: "./"`, so the same build works whether it is served from a domain root or this sub-path.

@@ -33,7 +33,7 @@ const gameEntries: GameEntry[] = [
     tagline: "Click fast, submit your score, and test the Sauce leaderboard and analytics SDK.",
     status: "Prototype",
     thumbnail: "/games/clicker-demo/thumb.svg",
-    playUrl: "https://brannysg.github.io/sauce-clicker-sdk-test/",
+    playUrl: "https://brannysg.github.io/sauce-labs/play/clicker-demo/",
     orientation: "landscape",
     recommendedDevice: "Any",
     updatedAt: "2026-06-03",
