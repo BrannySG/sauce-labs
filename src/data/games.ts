@@ -27,6 +27,18 @@ export interface GameEntry {
 
 const gameEntries: GameEntry[] = [
   {
+    id: "web-rpg",
+    title: "Web RPG",
+    creator: "Branny",
+    tagline: "A 2D character renderer prototype for early Web RPG visuals and animation tests.",
+    status: "Prototype",
+    thumbnail: "/games/web-rpg/thumb.jpg",
+    playUrl: "https://brannysg.github.io/web-rpg-v1/",
+    orientation: "landscape",
+    recommendedDevice: "Desktop",
+    updatedAt: "2026-06-03",
+  },
+  {
     id: "clicker-demo",
     title: "Sauce Clicker",
     creator: "Sauce Games",
