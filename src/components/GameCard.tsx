@@ -46,6 +46,13 @@ export function GameCard({ game, onPlay }: GameCardProps) {
             className="h-full w-full object-cover"
           />
         )}
+
+        {game.multiplayer && (
+          <span className="absolute left-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-black/55 px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-white shadow-sm ring-1 ring-white/15 backdrop-blur-sm">
+            <MultiplayerIcon />
+            Multiplayer
+          </span>
+        )}
       </div>
 
       <p className="mt-3 px-1 text-sm">
@@ -55,5 +62,19 @@ export function GameCard({ game, onPlay }: GameCardProps) {
         <span className="text-[var(--color-muted)]"> · {game.creator}</span>
       </p>
     </div>
+  );
+}
+
+function MultiplayerIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      className="h-3 w-3"
+      aria-hidden="true"
+    >
+      <path d="M7 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM14.5 9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM1.615 16.428a1.224 1.224 0 0 1-.569-1.175 6.002 6.002 0 0 1 11.908 0c.058.467-.172.92-.57 1.174A9.953 9.953 0 0 1 7 18a9.953 9.953 0 0 1-5.385-1.572ZM14.5 16h-.106c.07-.297.088-.611.048-.933a7.47 7.47 0 0 0-1.588-3.755 4.502 4.502 0 0 1 5.874 2.636.818.818 0 0 1-.36.98A7.465 7.465 0 0 1 14.5 16Z" />
+    </svg>
   );
 }

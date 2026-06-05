@@ -22,10 +22,25 @@ export interface GameEntry {
    */
   aspectRatio?: string;
   recommendedDevice?: RecommendedDevice;
+  /** Marks games that can only be played with others (shows a Multiplayer tag). */
+  multiplayer?: boolean;
   updatedAt?: string;
 }
 
 const gameEntries: GameEntry[] = [
+  {
+    id: "millionaire-royale",
+    title: "Millionaire Royale",
+    creator: "Branny",
+    tagline: "Enter the hot seat in a multiplayer quiz battle royale — last one standing wins a (fictional) $1,000,000.",
+    status: "New",
+    thumbnail: "/games/millionaire-royale/thumb.jpg",
+    playUrl: "https://millionaire.saucegames.io/",
+    orientation: "landscape",
+    recommendedDevice: "Any",
+    multiplayer: true,
+    updatedAt: "2026-06-05",
+  },
   {
     id: "web-rpg",
     title: "Web RPG",
