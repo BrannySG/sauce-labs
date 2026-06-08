@@ -29,6 +29,18 @@ export interface GameEntry {
 
 const gameEntries: GameEntry[] = [
   {
+    id: "horse-fishing",
+    title: "Horse Fishing Game",
+    creator: "Qasim",
+    tagline: "Cast off as a cheerful horse on a raft — reel in minnows, complete quests, and upgrade your bait.",
+    status: "New",
+    thumbnail: "/games/horse-fishing/thumb.jpg",
+    playUrl: "https://qasimali9001.github.io/HorseFishingGame/",
+    orientation: "landscape",
+    recommendedDevice: "Any",
+    updatedAt: "2026-06-08",
+  },
+  {
     id: "millionaire-royale",
     title: "Millionaire Royale",
     creator: "Branny",
