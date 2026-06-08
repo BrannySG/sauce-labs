@@ -110,7 +110,7 @@ const gameEntries: GameEntry[] = [
     status: "New",
     thumbnail: "/games/merge-for-brainrots/thumb.jpg",
     playUrl: "https://paulocorona.github.io/vibe-merge-brainrot/",
-    orientation: "portrait",
+    orientation: "landscape",
     recommendedDevice: "Any",
     updatedAt: "2026-05-27",
   },
