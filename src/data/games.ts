@@ -29,6 +29,30 @@ export interface GameEntry {
 
 const gameEntries: GameEntry[] = [
   {
+    id: "lottotd",
+    title: "LottoTD Survivors",
+    creator: "Branny",
+    tagline: "Survive endless waves as a lucky number — build towers, level up, and outlast the swarm.",
+    status: "New",
+    thumbnail: "/games/lottotd/thumb.jpg",
+    playUrl: "https://lottotd-survivors.pages.dev/",
+    orientation: "landscape",
+    recommendedDevice: "Any",
+    updatedAt: "2026-07-09",
+  },
+  {
+    id: "tileria",
+    title: "Tileria",
+    creator: "Branny",
+    tagline: "Gather, craft, and explore a cozy fantasy world — woodcutting, mining, and magical clearings await.",
+    status: "New",
+    thumbnail: "/games/tileria/thumb.jpg",
+    playUrl: "https://tileria.saucegames.io/#/game",
+    orientation: "landscape",
+    recommendedDevice: "Any",
+    updatedAt: "2026-07-09",
+  },
+  {
     id: "horse-fishing",
     title: "Horse Fishing Game",
     creator: "Qasim",
